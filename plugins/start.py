@@ -129,7 +129,7 @@ async def start_command(client: Bot, message: Message):
                 pass
     else:
         out = start_button(client)
-        await message.reply(
+        await message.reply_text(
                 first=message.from_user.first_name,
                 last=message.from_user.last_name,
                 username=f"@{message.from_user.username}"
