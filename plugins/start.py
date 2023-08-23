@@ -115,7 +115,6 @@ async def start_command(client: Bot, message: Message):
                     caption=caption,
                     parse_mode="html",
                     protect_content=PROTECT_CONTENT,
-                    reply_markup=reply_markup,
                 )
                 await asyncio.sleep(0.5)
             except FloodWait as e:
@@ -125,7 +124,6 @@ async def start_command(client: Bot, message: Message):
                     caption=caption,
                     parse_mode="html",
                     protect_content=PROTECT_CONTENT,
-                    reply_markup=reply_markup,
                 )
             except BaseException:
                 pass
@@ -141,7 +139,6 @@ async def start_command(client: Bot, message: Message):
                 mention=message.from_user.mention,
                 id=message.from_user.id,
             ),
-            reply_markup=InlineKeyboardMarkup(out),
             quote=True,
             disable_web_page_preview=True,
         )
@@ -163,7 +160,6 @@ async def not_joined(client: Bot, message: Message):
             mention=message.from_user.mention,
             id=message.from_user.id,
         ),
-        reply_markup=InlineKeyboardMarkup(buttons),
         quote=True,
         disable_web_page_preview=True,
     )
